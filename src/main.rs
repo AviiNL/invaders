@@ -68,7 +68,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let mut status = Status::new();
     let mut player = Player::new();
-    let mut invaders = Army::new(1);
+    let mut invaders = Army::new(status.level);
 
     let mut death_timer = Timer::from_millis(1000);
 

@@ -27,7 +27,7 @@ impl Army {
             }
         }
 
-        let move_timer_time = max(250, 1100 - level * 100);
+        let move_timer_time = max(200, 1100 - level as i64 * 100) as u64;
 
         Self {
             invaders,
@@ -65,7 +65,7 @@ impl Army {
         }
 
         if downwards {
-            let new_duration = max(250, self.move_timer.duration.as_millis() - 100);
+            let new_duration = max(100, self.move_timer.duration.as_millis() - 100);
             self.move_timer = Timer::from_millis(new_duration as u64);
         }
 
