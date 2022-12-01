@@ -162,7 +162,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     drop(render_tx);
     let _ = tokio::join!(render_handle);
-    // audio.wait();
+    audio.wait();
     stdout.execute(crossterm::cursor::Show)?;
     stdout.execute(terminal::LeaveAlternateScreen)?;
     terminal::disable_raw_mode()?;

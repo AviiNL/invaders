@@ -49,4 +49,8 @@ impl Sound {
         self.audio.play(name);
         Ok(())
     }
+
+    pub fn wait(&self) {
+        self.audio.wait();
+    }
 }
